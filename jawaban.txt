@@ -39,7 +39,7 @@
 
 4. a.
         SELECT id, items, email
-        FROM users;
+        FROM user;
     b.
         SELECT * FROM items WHERE price>1000000;
         SELECT * FROM items WHERE name ="uniklo";
@@ -50,7 +50,7 @@
 
 5.  UPDATE items
     SET price = 2500000
-    WHERE name = "sumsang b50";
+    WHERE name = "sumsang";
 
 
 
