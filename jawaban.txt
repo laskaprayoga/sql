@@ -1,0 +1,56 @@
+1. CREATE DATABASE MYSHOP
+
+2. CREATE TABLE USER(
+        id INT INTEGER AUTO_INCREMET PRYMARY KEY,
+        name VARCHAR(255),
+        email VARCHAR(255),
+        password VARCHAR(255)
+    );
+        CREATE TABLE categories(
+        id INT INTEGER AUTO_INCREMET PRYMARY KEY,
+        name VARCHAR(255),
+    );
+    CREATE TABLE items(
+        id INT INTEGER AUTO_INCREMET PRYMARY KEY,
+        name VARCHAR(255),
+        description VARCHAR(255),
+        price INT,
+        stock INT,
+        category_id
+        FOREIGN KEY (category_id) REFERENCES categories(id)
+    );
+
+3. INSERT INTO users (name, email, password)
+    VALUES
+        ('john doe', 'john@doe.com', john123),
+        ('jane doe', 'jane@doe.com', jane123);
+    INSERT INTO categories (name)
+    VALUES
+        ('gadget'),
+        ('cloth'),
+        ('men'),
+        ('women'),
+        ('branded');
+    INSERT INTO (name,description,price,stock,category_id)
+    VALUES
+        ('sumsang b50', 'hape keren dari merek sumsang', 899, 50, 1),
+        ('uniklooh', 'baju keren dari brand ternama', 1299, 30, 2),
+        ('IMHO Watch', jam tangan anak yang jujur banget', 19, 100,3 );
+
+4. a.
+        SELECT id, items, email
+        FROM users;
+    b.
+        SELECT * FROM items WHERE price>1000000;
+        SELECT * FROM items WHERE name ="uniklo";
+    c.
+        SELECT items.name, items.description, categories.name AS category_name
+        FROM items
+        JOIN categories ON items.category_id = categories.id;
+
+5.  UPDATE items
+    SET price = 2500000
+    WHERE name = "sumsang b50";
+
+
+
